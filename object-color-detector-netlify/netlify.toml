@@ -1,0 +1,16 @@
+# Arquivo de configuração do Netlify para deploy do site Python
+
+[[build]]
+  # Comando para instalar dependências e rodar o app principal
+  command = "pip install -r requirements.txt && python src/app.py"
+  # Pasta onde ficam as funções serverless (mantenha 'functions' para compatibilidade)
+  functions = "functions"
+  # Pasta de arquivos estáticos a serem publicados (mantenha 'public' para compatibilidade)
+  publish = "public"
+
+[[redirects]]
+  # Redireciona todas as rotas para o index.html (SPA)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
